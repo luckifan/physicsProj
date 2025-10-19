@@ -33,12 +33,21 @@ class SpringSystem {
 
 	    
             void shmPosition(double time[], double arr[], int size);
+	    
 	    void shmVelocity(double time[], double arr[], int size);
+
+	    void dampedPosition(double time[], double arr[], int size);
+
+	    void dampedVelocity(double time[], double arr[], int size);
+
+	    void forcedVelocity(double time[], double arr[], int size);
+
+	    void forcedPosition(double time[], double arr[], int size);
+
 	    void write(string fileName, double posArr[], double velArr[], double times[], int size);
+
+	    double getMass();
+
 	    double getPeriod();
 };
-
-double dampedOsc( );
-
-double forcedDamped();
 #endif

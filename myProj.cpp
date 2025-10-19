@@ -17,19 +17,15 @@ int main(void) {
     double totalTime = 10 * sys1.getPeriod();
     int size = (int) (totalTime * 10);
     double timeArr[size + 1];
-    double shmPosArr[size + 1];
-    double shmVelArr[size +1];
-    double dampedPosArr[size + 1];
-    double dampedVelArr[size + 1];
-    double forcedPosArr[size + 1];
-    double forcedVelArr[size + 1];
+    double PosArr[size + 1];
+    double VelArr[size +1];
 
     for (int i = 0; i <= size; i += 1) {
         timeArr[i] = time;
 	time += 0.1;
     }
 
-    sys1.shmPosition(timeArr, shmPosArr, size);
-    sys1.shmVelocity(timeArr, shmVelArr, size);
-    sys1.write("shm.csv", shmPosArr, shmVelArr, timeArr, size);
+    sys1.shmPosition(timeArr, PosArr, size);
+    sys1.shmVelocity(timeArr, VelArr, size);
+    sys1.write("shm.csv", PosArr, VelArr, timeArr, size);
 }
